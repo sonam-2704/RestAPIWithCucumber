@@ -1,0 +1,338 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "comments": [
+          {
+            "line": 3,
+            "value": "#Scenario: Verify one author of the post"
+          },
+          {
+            "line": 4,
+            "value": "#Given I perform GET operation for \"/posts/1\""
+          },
+          {
+            "line": 5,
+            "value": "#When I send GET HTTP request"
+          },
+          {
+            "line": 6,
+            "value": "#Then I should see the author name as \"typicode\""
+          },
+          {
+            "line": 7,
+            "value": "#"
+          },
+          {
+            "line": 8,
+            "value": "#"
+          },
+          {
+            "line": 9,
+            "value": "#Scenario Outline: Verify all authors"
+          },
+          {
+            "line": 10,
+            "value": "#Given I perform GET operation for post number \"\u003cpost\u003e\""
+          },
+          {
+            "line": 11,
+            "value": "#When I send GET HTTP request"
+          },
+          {
+            "line": 12,
+            "value": "#Then I should see the title as \"\u003ctitle\u003e\""
+          },
+          {
+            "line": 13,
+            "value": "#Then I should see the author name as \"\u003cauthorName\u003e\""
+          },
+          {
+            "line": 14,
+            "value": "#"
+          },
+          {
+            "line": 15,
+            "value": "#Examples:"
+          },
+          {
+            "line": 16,
+            "value": "#| post | title | authorName |"
+          },
+          {
+            "line": 17,
+            "value": "#| /posts/1 | One Indian Girl | Chetan Bhagat |"
+          },
+          {
+            "line": 18,
+            "value": "#| /posts/2 | AB: The Autobiography | AB de Villiers |"
+          },
+          {
+            "line": 19,
+            "value": "#| /posts/3 | Six Machine | Chris Gayle |"
+          },
+          {
+            "line": 20,
+            "value": "#| /posts/4 | Autobiography: Ace Against Odds | Sania Mirza |"
+          },
+          {
+            "line": 21,
+            "value": "#"
+          },
+          {
+            "line": 22,
+            "value": "#"
+          },
+          {
+            "line": 23,
+            "value": "#Scenario: Add book title and author"
+          },
+          {
+            "line": 24,
+            "value": "#Given I set POST employee service api endpoint for \"/posts\""
+          },
+          {
+            "line": 25,
+            "value": "#When I send POST HTTP request"
+          },
+          {
+            "line": 26,
+            "value": "#\t\t| title | author |"
+          },
+          {
+            "line": 27,
+            "value": "#\t\t| A Kingdom for his Love | Vani Mahesh and Shine Antony |"
+          },
+          {
+            "line": 28,
+            "value": "#Then I receive valid HTTP Response code 201"
+          },
+          {
+            "line": 29,
+            "value": "#And I receive valid response as"
+          },
+          {
+            "line": 30,
+            "value": "#\t\t| title | author |"
+          },
+          {
+            "line": 31,
+            "value": "#\t\t| A Kingdom for his Love | Vani Mahesh and Shine Antony |"
+          },
+          {
+            "line": 34,
+            "value": "#Scenario: Verify DELETE operation after POST"
+          },
+          {
+            "line": 35,
+            "value": "#Given I perform POST operation for \"/posts\" with body as"
+          },
+          {
+            "line": 36,
+            "value": "#\t\t| id | title | author |"
+          },
+          {
+            "line": 37,
+            "value": "#\t\t| 7  | Indian Paper Money | Razack |"
+          },
+          {
+            "line": 38,
+            "value": "#When I perform DELETE operation for \"/posts/\""
+          },
+          {
+            "line": 39,
+            "value": "#\t\t| postid |"
+          },
+          {
+            "line": 40,
+            "value": "#\t\t|   7    |"
+          },
+          {
+            "line": 41,
+            "value": "#And I perform GET operation for \"/posts/\" with post number as"
+          },
+          {
+            "line": 42,
+            "value": "#\t\t| postid |"
+          },
+          {
+            "line": 43,
+            "value": "#\t\t|   7    |"
+          },
+          {
+            "line": 44,
+            "value": "#Then I should not see any response"
+          },
+          {
+            "line": 46,
+            "value": "#Scenario: Verify DELETE operation"
+          },
+          {
+            "line": 47,
+            "value": "#Given I perform DELETE operation for \"/posts/\""
+          },
+          {
+            "line": 48,
+            "value": "#\t\t| postid |"
+          },
+          {
+            "line": 49,
+            "value": "#\t\t|   7    |"
+          },
+          {
+            "line": 50,
+            "value": "#And I perform GET operation for \"/posts/\" with post number as"
+          },
+          {
+            "line": 51,
+            "value": "#\t\t| postid |"
+          },
+          {
+            "line": 52,
+            "value": "#\t\t|   7    |"
+          },
+          {
+            "line": 53,
+            "value": "#Then I should not see any response"
+          }
+        ],
+        "line": 55,
+        "name": "Verify PUT operation after POST",
+        "description": "",
+        "id": "verify-different-get-and-put-operations-with-locally-installed-json-server;verify-put-operation-after-post",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 987284958,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "I perform POST operation for \"/posts\" with body as",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/posts",
+                  "offset": 30
+                }
+              ],
+              "location": "GetPostSteps1.i_perform_POST_operation_for_with_body_as(String,DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id",
+                  "title",
+                  "author"
+                ],
+                "line": 57
+              },
+              {
+                "cells": [
+                  "7",
+                  "API Testing Course",
+                  "ExecuteAutomation"
+                ],
+                "line": 58
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 15959974,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "I perform PUT operation for \"/posts/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/posts/",
+                  "offset": 29
+                }
+              ],
+              "location": "GetPostSteps1.i_perform_PUT_operation_for(String,DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id",
+                  "title",
+                  "author"
+                ],
+                "line": 60
+              },
+              {
+                "cells": [
+                  "7",
+                  "API Testing",
+                  "ExecuteAutomation"
+                ],
+                "line": 61
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 17225248,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "I perform GET operation for \"/posts/\" with post number as",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/posts/",
+                  "offset": 29
+                }
+              ],
+              "location": "GetPostSteps1.i_perform_GET_operation_for_with_post_number_as(String,DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "postid"
+                ],
+                "line": 63
+              },
+              {
+                "cells": [
+                  "7"
+                ],
+                "line": 64
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10943054,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "I should see body with title as \"API Testing\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "API Testing",
+                  "offset": 33
+                }
+              ],
+              "location": "GetPostSteps1.i_should_see_body_with_title_as(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Verify different GET and PUT Operations with locally installed json server",
+    "description": "",
+    "id": "verify-different-get-and-put-operations-with-locally-installed-json-server",
+    "keyword": "Feature",
+    "uri": "src/test/resources/featurefile/GetPostWithJson.feature"
+  }
+]

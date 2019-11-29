@@ -1,0 +1,6 @@
+com\qa\properties\PropertyManager.class
+com\qa\pojo\Posts.class
+com\qa\client\RestClient.class
+com\qa\csv\BaseCsv.class
+com\qa\pojo\Users.class
+com\qa\base\TestBase.class

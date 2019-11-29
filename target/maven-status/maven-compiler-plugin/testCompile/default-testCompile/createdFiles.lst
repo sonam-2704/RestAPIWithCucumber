@@ -1,0 +1,4 @@
+com\qa\testRunner\TestRunner.class
+com\qa\stepDefinitions\GetPostSteps.class
+com\qa\testRunner\TestRunnerWithJson.class
+com\qa\stepDefinitions1\GetPostSteps1.class
